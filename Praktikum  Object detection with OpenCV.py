@@ -27,6 +27,7 @@ while True:
             if cv2.contourArea(contour) > 500:
                 x, y, w, h = cv2.boundingRect(contour)
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                cv2.putText(frame, "Blue", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2) #keterangan pada kotak 
 
  # Menampilkan hasil
  cv2.imshow("Frame",frame)
@@ -35,6 +36,7 @@ while True:
 
  if cv2.waitKey(1) & 0xFF == ord('q'):
    break
- 
+
+
 cap.release()
 cv2.destroyAllWindows()
